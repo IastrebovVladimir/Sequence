@@ -5,9 +5,6 @@
 #include "Sequence.h"
 
 template <typename T>
-class MutableListSequence;
-
-template <typename T>
 class ListSequence : public Sequence<T> {
 protected:
     LinkedList<T>* items;
