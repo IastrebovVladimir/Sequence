@@ -6,9 +6,6 @@
 
 
 template <typename T>
-class MutableArraySequence;
-
-template <typename T>
 class ArraySequence: public Sequence<T> {
 protected:
     DynamicArray<T>* items;
