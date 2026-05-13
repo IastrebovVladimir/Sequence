@@ -88,6 +88,23 @@ public:
         return items->Get(index);
     }
 
+    Sequence<T>* GetSubsequence(int startIndex, int endIndex) const override {
+        if (startIndex < 0 || endIndex < 0) {
+            throw std::out_of_range("GetSubsequence: index out of range");
+        }
+        if (startIndex > endIndex) {
+            throw std::out_of_range("GetSubsequence: startIndex > endIndex");
+        }
+        if (endIndex >= GetLength()) {
+            throw std::out_of_range("GetSubsequence: endIndex out of range");
+        }
+        Sequence<T>* result = this->CreateEmpty();
+        for (int index = startIndex; index <= endIndex; index++) {
+            result->Append(this->Get(index));
+        }
+        return result;
+    }
+
     int GetLength() const override {
         return items->GetSize();
     }
