@@ -1,8 +1,6 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "ArraySequence.h"
-#include "ListSequence.h"
 #include "Sequence.h"
 #include "types.h"
 
