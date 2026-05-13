@@ -12,7 +12,7 @@ public:
     virtual Enumerator<T> GetEnumerator() const = 0;
     virtual const T &GetFirst() const = 0;
     virtual const T &GetLast() const = 0;
-    Sequence<T>* GetSubsequence(int startIndex, int endIndex) const {
+    virtual Sequence<T>* GetSubsequence(int startIndex, int endIndex) const {
         if (startIndex < 0 || endIndex < 0) {
             throw std::out_of_range("GetSubsequence: index out of range");
         }
